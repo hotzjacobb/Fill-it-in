@@ -14,6 +14,9 @@
 		7FA1D6AC237CEB3D00155D39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FA1D6AA237CEB3D00155D39 /* LaunchScreen.storyboard */; };
 		7FA1D6B7237CEB3D00155D39 /* UpForItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1D6B6237CEB3D00155D39 /* UpForItTests.swift */; };
 		7FA1D6C2237CEB3D00155D39 /* UpForItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA1D6C1237CEB3D00155D39 /* UpForItUITests.swift */; };
+		7FA42E1E23EDD29A00F2ABA0 /* WikipediaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA42E1D23EDD29A00F2ABA0 /* WikipediaKit.framework */; };
+		7FC15F4823BE42FF00DD1B59 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC15F4723BE42FF00DD1B59 /* GameViewController.swift */; };
+		7FC15F4A23BE443F00DD1B59 /* GameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC15F4923BE443F00DD1B59 /* GameTextView.swift */; };
 		7FF32F4523BA9E1200E5AAB1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7FF32F4723BA9E1200E5AAB1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		7FA1D6BD237CEB3D00155D39 /* UpForItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpForItUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA1D6C1237CEB3D00155D39 /* UpForItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpForItUITests.swift; sourceTree = "<group>"; };
 		7FA1D6C3237CEB3D00155D39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FA42E1D23EDD29A00F2ABA0 /* WikipediaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WikipediaKit.framework; path = Carthage/Build/iOS/WikipediaKit.framework; sourceTree = SOURCE_ROOT; };
+		7FC15F4723BE42FF00DD1B59 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		7FC15F4923BE443F00DD1B59 /* GameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTextView.swift; sourceTree = "<group>"; };
 		7FF32F3F23BA95A400E5AAB1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7FF32F4023BA95A400E5AAB1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7FF32F4123BA95B100E5AAB1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -62,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA42E1E23EDD29A00F2ABA0 /* WikipediaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,9 +112,12 @@
 		7FA1D6A0237CEB3A00155D39 /* UpForIt */ = {
 			isa = PBXGroup;
 			children = (
+				7FA42E1D23EDD29A00F2ABA0 /* WikipediaKit.framework */,
 				7FA1D6A1237CEB3A00155D39 /* AppDelegate.swift */,
 				7FA1D6A3237CEB3A00155D39 /* ViewController.swift */,
 				7FA1D6A5237CEB3A00155D39 /* Main.storyboard */,
+				7FC15F4923BE443F00DD1B59 /* GameTextView.swift */,
+				7FC15F4723BE42FF00DD1B59 /* GameViewController.swift */,
 				7FF32F4723BA9E1200E5AAB1 /* Localizable.strings */,
 				7FA1D6A8237CEB3D00155D39 /* Assets.xcassets */,
 				7FA1D6AA237CEB3D00155D39 /* LaunchScreen.storyboard */,
@@ -144,6 +154,7 @@
 				7FA1D69A237CEB3A00155D39 /* Sources */,
 				7FA1D69B237CEB3A00155D39 /* Frameworks */,
 				7FA1D69C237CEB3A00155D39 /* Resources */,
+				7FA42E1F23EDD3F300F2ABA0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -263,13 +274,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7FA42E1F23EDD3F300F2ABA0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/WikipediaKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7FA1D69A237CEB3A00155D39 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7FA1D6A4237CEB3A00155D39 /* ViewController.swift in Sources */,
+				7FC15F4823BE42FF00DD1B59 /* GameViewController.swift in Sources */,
 				7FA1D6A2237CEB3A00155D39 /* AppDelegate.swift in Sources */,
+				7FC15F4A23BE443F00DD1B59 /* GameTextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +495,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UpForIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,6 +516,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = UpForIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
